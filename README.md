@@ -23,7 +23,6 @@ import 'package:d_button/d_button.dart';
 ## Example
 
 1. Circle
-<hr>
 
 <img src="https://github.com/indratrisnar/d_button/blob/master/pic/dbutton_circle.png">
 
@@ -59,9 +58,9 @@ DButton.circle(
     child: Text('1'),
 ),
 ```
+<hr>
 
 2. Shadow
-<hr>
 
 <img src="https://github.com/indratrisnar/d_button/blob/master/pic/dbutton_elevation.png">
 
@@ -174,9 +173,9 @@ DButton.shadow(
     child: Icon(Icons.filter),
 ),
 ```
+<hr>
 
 3. Flat
-<hr>
 
 <img src="https://github.com/indratrisnar/d_button/blob/master/pic/dbutton_flat.png">
 
@@ -253,9 +252,9 @@ DButton.flat(
     child: Icon(Icons.search),
 ),
 ```
+<hr>
 
 4. Elevation
-<hr>
 
 <img src="https://github.com/indratrisnar/d_button/blob/master/pic/dbutton_shadow.png">
 
