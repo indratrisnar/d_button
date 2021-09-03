@@ -1,3 +1,13 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+DButton package :
+- Button Circle
+- Button Shadow
+- Button Flat
+- Button Elevation
+
+Child can be filled with any widget as long as there is sufficient space.
+But, for DButton.circle() just to use for layout circle.
+
+You can modify all the buttons above to your liking and be as creative as possible
+
