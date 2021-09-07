@@ -1,6 +1,6 @@
 name: d_button
-description: Flutter package for your custom button.
-version: 0.0.1
+description: Custom buttons which you can create and re-style as you wish. It can be used for one or more widgets.
+version: 0.0.2
 homepage: https://github.com/indratrisnar/d_button
 
 environment:

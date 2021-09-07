@@ -1,26 +1,12 @@
 # d_button
 
-Flutter package for your custom button.
-
+Custom buttons which you can create and re-style as you wish. It can be used for one or more widgets.
 Child of button can be filled with any widget as long as there is sufficient space.
 But, for DButton.circle() just to use for layout circle.
 
 You can modify all the buttons above to your liking and be as creative as possible
 
-## Instalation
-
-1. Add package to your pubspec.yaml and run `dart pub get` or click icon `Get Package` at the top right your pubspec.yaml
-```yaml
-dependencies:
-  d_button: ^0.0.1
-```
-
-2. Import the package
-```dart
-import 'package:d_button/d_button.dart';
-```
-
-## Example
+## Usage
 
 1. Circle
 
@@ -62,7 +48,7 @@ DButton.circle(
 
 2. Shadow
 
-<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_elevation.png">
+<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_shadow.png">
 
 ```dart
 DButton.shadow(
@@ -256,7 +242,7 @@ DButton.flat(
 
 4. Elevation
 
-<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_shadow.png">
+<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_elevation.png">
 
 ```dart
 DButton.elevation(
@@ -336,13 +322,150 @@ DButton.elevation(
     child: Icon(Icons.menu),
 ),
 ```
+<hr>
 
+5. Border
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_border.png">
 
-For help getting started with Flutter, view 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```dart
+DButton.border(
+    borderColor: Colors.pink,
+    mainColor: Colors.blue,
+    radius: 0,
+    onClick: () {},
+    child: Text(
+        "D'Button Border 1",
+        style: TextStyle(color: Colors.white),
+    ),
+),
+
+DButton.border(
+    borderColor: Colors.blue,
+    width: 150,
+    radius: 150,
+    mainColor: Colors.amber,
+    onClick: () {},
+    child: Text("D'Button Border 2"),
+),
+
+FittedBox(
+    child: DButton.border(
+        borderColor: Colors.blue,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+        mainColor: Colors.white,
+        onClick: () {},
+        radius: 0,
+        child: Text("D'Button Border 3"),
+    ),
+),
+
+FittedBox(
+    child: DButton.border(
+        borderColor: Colors.amber,
+        mainColor: Colors.blue,
+        onClick: null,
+        child: Text("D'Button Border 4"),
+    ),
+),
+
+DButton.elevation(
+    mainColor: Colors.amber,
+    onClick: () {},
+    child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+            Text("D'Button Border 5"),
+            Icon(Icons.arrow_forward),
+        ],
+    ),
+),
+
+FittedBox(
+    child: DButton.border(
+        borderColor: Colors.blue,
+        radius: 150,
+        height: 50,
+        mainColor: Colors.blue,
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        onClick: () {},
+        child: Row(
+            children: [
+                Text("D'Button Border 6"),
+                SizedBox(width: 16),
+                Icon(Icons.arrow_forward),
+            ],
+        ),
+    ),
+),
+
+DButton.border(
+    borderColor: Colors.blue,
+    mainColor: Colors.white,
+    onClick: () => {},
+    radius: 16,
+    height: 50,
+    width: 50,
+    child: Icon(Icons.filter),
+),
+```
+<hr>
+
+6. Custom Child
+
+Custom child can use for type button like shadow, flat, elevation & border
+
+<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_custom_child.png">
+
+```dart
+DButton.shadow(
+    radius: 8,
+    padding: EdgeInsets.only(right: 8),
+    shadowColor: Colors.grey,
+    onClick: () {},
+    child: Row(
+        children: [
+        ClipRRect(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8),
+                bottomLeft: Radius.circular(8),
+            ),
+            child: Image.network(
+                'https://images.unsplash.com/photo-1590829197118-b0609523669d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+            ),
+        ),
+        SizedBox(width: 8),
+        Expanded(
+            child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+                Text(
+                    'Title',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8),
+                Text(
+                    "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                ),
+            ],
+            ),
+        ),
+        ],
+    ),
+),
+```
+
+Check at [Github](https://github.com/indratrisnar/d_button),
+
+Support me for more feature & packages
+[Donate](https://www.paypal.com/paypalme/indratrisnar)
+
+Check my app : [Visit](https://indratrisnar.github.io/projects.html)
+
+Check My Tutorial & Course : [Watch](https://www.youtube.com/channel/UC0d_xINEvCtlDCpWfBpnYpA)

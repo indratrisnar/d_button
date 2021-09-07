@@ -11,3 +11,7 @@ But, for DButton.circle() just to use for layout circle.
 
 You can modify all the buttons above to your liking and be as creative as possible
 
+## 0.0.2
+
+- Add documentation
+- Add Button Border
