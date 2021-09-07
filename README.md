@@ -24,7 +24,7 @@ import 'package:d_button/d_button.dart';
 
 1. Circle
 
-<img src="https://github.com/indratrisnar/d_button/blob/master/pic/dbutton_circle.png">
+<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_circle.png">
 
 ```dart
 DButton.circle(
@@ -62,7 +62,7 @@ DButton.circle(
 
 2. Shadow
 
-<img src="https://github.com/indratrisnar/d_button/blob/master/pic/dbutton_elevation.png">
+<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_elevation.png">
 
 ```dart
 DButton.shadow(
@@ -177,7 +177,7 @@ DButton.shadow(
 
 3. Flat
 
-<img src="https://github.com/indratrisnar/d_button/blob/master/pic/dbutton_flat.png">
+<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_flat.png">
 
 ```dart
 DButton.flat(
@@ -256,7 +256,7 @@ DButton.flat(
 
 4. Elevation
 
-<img src="https://github.com/indratrisnar/d_button/blob/master/pic/dbutton_shadow.png">
+<img src="https://github.com/indratrisnar/d_button/raw/master/pic/dbutton_shadow.png">
 
 ```dart
 DButton.elevation(
