@@ -28,7 +28,7 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ListTile(title: Text('Circle', style: TextStyle(fontSize: 18))),
-              DButton.circle(
+              DButtonCircle(
                 mainColor: Colors.blue,
                 onClick: () {},
                 diameter: 40,
@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.circle(
+                child: DButtonCircle(
                   mainColor: Colors.white,
                   onClick: () {},
                   padding: EdgeInsets.all(8),
@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.circle(
+              DButtonCircle(
                 mainColor: Colors.amber,
                 onClick: () {},
                 diameter: 30,
@@ -60,7 +60,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               ListTile(title: Text('Shadow', style: TextStyle(fontSize: 18))),
-              DButton.shadow(
+              DButtonShadow(
                 mainColor: Colors.blue,
                 splashColor: Colors.cyan,
                 onClick: () => {},
@@ -73,7 +73,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.shadow(
+                child: DButtonShadow(
                   mainColor: Colors.white,
                   shadowColor: Colors.blue,
                   padding: EdgeInsets.symmetric(horizontal: 16),
@@ -83,7 +83,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.shadow(
+              DButtonShadow(
                 mainColor: Colors.amber,
                 shadowColor: Colors.blue,
                 splashColor: Colors.yellow,
@@ -94,7 +94,7 @@ class Home extends StatelessWidget {
                 child: Text("D'Button Shadow 3"),
               ),
               SizedBox(height: 16),
-              DButton.shadow(
+              DButtonShadow(
                 mainColor: Colors.amber,
                 shadowColor: Colors.grey,
                 splashColor: Colors.yellow,
@@ -106,7 +106,7 @@ class Home extends StatelessWidget {
                 child: Text("D'Button Shadow 4"),
               ),
               SizedBox(height: 16),
-              DButton.shadow(
+              DButtonShadow(
                 mainColor: Colors.white,
                 shadowColor: Colors.blue,
                 splashColor: Colors.yellow,
@@ -124,7 +124,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.shadow(
+                child: DButtonShadow(
                   mainColor: Colors.blue,
                   splashColor: Colors.yellow,
                   onClick: () => {},
@@ -142,7 +142,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.shadow(
+              DButtonShadow(
                 mainColor: Colors.amber,
                 splashColor: Colors.amberAccent,
                 onClick: () => {},
@@ -158,7 +158,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.shadow(
+              DButtonShadow(
                 mainColor: Colors.cyan,
                 splashColor: Colors.blue,
                 onClick: () => {},
@@ -170,7 +170,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 10),
               Divider(),
               ListTile(title: Text('Flat', style: TextStyle(fontSize: 18))),
-              DButton.flat(
+              DButtonFlat(
                 mainColor: Colors.blue,
                 onClick: () {},
                 child: Text(
@@ -179,7 +179,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.flat(
+              DButtonFlat(
                 width: 150,
                 radius: 150,
                 mainColor: Colors.amber,
@@ -188,7 +188,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.flat(
+                child: DButtonFlat(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   mainColor: Colors.white,
                   onClick: () {},
@@ -197,14 +197,14 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.flat(
+                child: DButtonFlat(
                   mainColor: Colors.blue,
                   onClick: null,
                   child: Text("D'Button Flat 4"),
                 ),
               ),
               SizedBox(height: 16),
-              DButton.flat(
+              DButtonFlat(
                 mainColor: Colors.amber,
                 onClick: () {},
                 child: Row(
@@ -217,7 +217,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.flat(
+                child: DButtonFlat(
                   radius: 150,
                   height: 50,
                   mainColor: Colors.blue,
@@ -233,7 +233,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.flat(
+              DButtonFlat(
                 mainColor: Colors.cyan,
                 onClick: () => {},
                 radius: 4,
@@ -245,7 +245,7 @@ class Home extends StatelessWidget {
               Divider(),
               ListTile(
                   title: Text('Elevation', style: TextStyle(fontSize: 18))),
-              DButton.elevation(
+              DButtonElevation(
                 mainColor: Colors.blue,
                 onClick: () {},
                 child: Text(
@@ -254,7 +254,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.elevation(
+              DButtonElevation(
                 elevation: 8,
                 width: 150,
                 radius: 150,
@@ -264,7 +264,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.elevation(
+                child: DButtonElevation(
                   elevation: 20,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   mainColor: Colors.white,
@@ -274,14 +274,14 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.elevation(
+                child: DButtonElevation(
                   mainColor: Colors.blue,
                   onClick: null,
                   child: Text("D'Button Elevation 4"),
                 ),
               ),
               SizedBox(height: 16),
-              DButton.elevation(
+              DButtonElevation(
                 mainColor: Colors.amber,
                 onClick: () {},
                 child: Row(
@@ -294,7 +294,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.elevation(
+                child: DButtonElevation(
                   radius: 150,
                   height: 50,
                   elevation: 30,
@@ -311,7 +311,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.elevation(
+              DButtonElevation(
                 mainColor: Colors.white,
                 shadowColor: Colors.blue,
                 onClick: () => {},
@@ -324,7 +324,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 10),
               Divider(),
               ListTile(title: Text('Border', style: TextStyle(fontSize: 18))),
-              DButton.border(
+              DButtonBorder(
                 borderColor: Colors.pink,
                 mainColor: Colors.blue,
                 radius: 0,
@@ -335,7 +335,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.border(
+              DButtonBorder(
                 borderColor: Colors.blue,
                 width: 150,
                 radius: 150,
@@ -345,7 +345,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.border(
+                child: DButtonBorder(
                   borderColor: Colors.blue,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   mainColor: Colors.white,
@@ -356,7 +356,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.border(
+                child: DButtonBorder(
                   borderColor: Colors.amber,
                   mainColor: Colors.blue,
                   onClick: null,
@@ -364,7 +364,8 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.elevation(
+              DButtonBorder(
+                borderColor: Colors.blue,
                 mainColor: Colors.amber,
                 onClick: () {},
                 child: Row(
@@ -377,7 +378,7 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 16),
               FittedBox(
-                child: DButton.border(
+                child: DButtonBorder(
                   borderColor: Colors.blue,
                   radius: 150,
                   height: 50,
@@ -394,7 +395,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              DButton.border(
+              DButtonBorder(
                 borderColor: Colors.blue,
                 mainColor: Colors.white,
                 onClick: () => {},
@@ -407,7 +408,7 @@ class Home extends StatelessWidget {
               Divider(),
               ListTile(
                   title: Text('Custom Child', style: TextStyle(fontSize: 18))),
-              DButton.shadow(
+              DButtonShadow(
                 radius: 8,
                 padding: EdgeInsets.only(right: 8),
                 shadowColor: Colors.grey,

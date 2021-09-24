@@ -3,48 +3,64 @@ library d_button;
 import 'package:flutter/material.dart';
 
 /// Use static method to return custom button widget like [DButton.circle(child: Icon(Icons.favorite))]
-class DButton {
-  /// [shadow] return custom button which has shadow
-  static Widget shadow({
-    /// [mainColor] body color of button. Default: Colors.white
-    Color mainColor = Colors.white,
+class DButtonShadow extends StatelessWidget {
+  /// [mainColor] body color of button. Default: Colors.white
+  Color mainColor;
 
-    /// [splashColor] color for splash effect. Default: Colors.grey
-    Color splashColor = Colors.grey,
+  /// [splashColor] color for splash effect. Default: Colors.grey
+  Color splashColor;
 
-    /// [shadowColor] color for shadow button. Default: Colors.black38
-    Color shadowColor = Colors.black38,
+  /// [shadowColor] color for shadow button. Default: Colors.black38
+  Color shadowColor;
 
-    /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
-    Color disableColor = Colors.grey,
+  /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
+  Color disableColor;
 
-    /// [onClick] action when button clicked
-    Function? onClick,
+  /// [onClick] action when button clicked
+  Function()? onClick;
 
-    /// [onDoubleClick] action when button double clicked
-    Function? onDoubleClick,
+  /// [onDoubleClick] action when button double clicked
+  Function()? onDoubleClick;
 
-    /// [onLongClick] action when button long press
-    Function? onLongClick,
+  /// [onLongClick] action when button long press
+  Function()? onLongClick;
 
-    /// [width] width of button
-    double? width,
+  /// [width] width of button
+  double? width;
 
-    /// [height] height of button
-    double? height,
+  /// [height] height of button
+  double? height;
 
-    /// [padding] padding of button
-    EdgeInsetsGeometry? padding,
+  /// [padding] padding of button
+  EdgeInsetsGeometry? padding;
 
-    /// [child] child of button. Widget can be anything as can as possible
-    required Widget child,
+  /// [child] child of button. Widget can be anything as can as possible
+  Widget child;
 
-    /// [radius] radius for angle button. Default: 4.0
-    double radius = 4.0,
+  /// [radius] radius for angle button. Default: 4.0
+  double radius;
 
-    /// [shadowOffset] Position of shadow button. Default: Offset.zero
-    Offset shadowOffset = Offset.zero,
-  }) {
+  /// [shadowOffset] Position of shadow button. Default: Offset.zero
+  Offset shadowOffset;
+
+  DButtonShadow({
+    required this.child,
+    this.disableColor = Colors.grey,
+    this.height,
+    this.mainColor = Colors.white,
+    this.onClick,
+    this.onDoubleClick,
+    this.onLongClick,
+    this.padding,
+    this.radius = 4.0,
+    this.shadowColor = Colors.black38,
+    this.shadowOffset = Offset.zero,
+    this.splashColor = Colors.grey,
+    this.width,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
@@ -64,9 +80,9 @@ class DButton {
         child: InkWell(
           borderRadius: BorderRadius.circular(radius),
           splashColor: splashColor,
-          onTap: onClick == null ? null : () => onClick(),
-          onLongPress: onLongClick == null ? null : () => onLongClick(),
-          onDoubleTap: onDoubleClick == null ? null : () => onDoubleClick(),
+          onTap: onClick,
+          onLongPress: onLongClick,
+          onDoubleTap: onDoubleClick,
           child: Container(
             width: width,
             height: height,
@@ -89,42 +105,59 @@ class DButton {
       ),
     );
   }
+}
 
-  /// [flat] return custom button which has flat
-  static Widget flat({
-    /// [mainColor] body color of button. Default: Colors.white
-    Color mainColor = Colors.white,
+/// [DButtonFlat] return custom button which has flat
+class DButtonFlat extends StatelessWidget {
+  /// [mainColor] body color of button. Default: Colors.white
+  Color mainColor;
 
-    /// [splashColor] color for splash effect. Default: Colors.grey
-    Color splashColor = Colors.grey,
+  /// [splashColor] color for splash effect. Default: Colors.grey
+  Color splashColor;
 
-    /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
-    Color disableColor = Colors.grey,
+  /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
+  Color disableColor;
 
-    /// [onClick] action when button clicked
-    Function? onClick,
+  /// [onClick] action when button clicked
+  Function()? onClick;
 
-    /// [onDoubleClick] action when button double clicked
-    Function? onDoubleClick,
+  /// [onDoubleClick] action when button double clicked
+  Function()? onDoubleClick;
 
-    /// [onLongClick] action when button long press
-    Function? onLongClick,
+  /// [onLongClick] action when button long press
+  Function()? onLongClick;
 
-    /// [width] width of button
-    double? width,
+  /// [width] width of button
+  double? width;
 
-    /// [height] height of button
-    double? height,
+  /// [height] height of button
+  double? height;
 
-    /// [padding] padding of button
-    EdgeInsetsGeometry? padding,
+  /// [padding] padding of button
+  EdgeInsetsGeometry? padding;
 
-    /// [child] child of button. Widget can be anything as can as possible
-    required Widget child,
+  /// [child] child of button. Widget can be anything as can as possible
+  Widget child;
 
-    /// [radius] radius for angle button. Default: 4.0
-    double radius = 4.0,
-  }) {
+  /// [radius] radius for angle button. Default: 4.0
+  double radius;
+
+  DButtonFlat({
+    required this.child,
+    this.disableColor = Colors.grey,
+    this.height,
+    this.mainColor = Colors.white,
+    this.onClick,
+    this.onDoubleClick,
+    this.onLongClick,
+    this.padding,
+    this.radius = 4.0,
+    this.splashColor = Colors.grey,
+    this.width,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(radius),
       color: onClick == null && onDoubleClick == null && onLongClick == null
@@ -133,9 +166,9 @@ class DButton {
       child: InkWell(
         borderRadius: BorderRadius.circular(radius),
         splashColor: splashColor,
-        onTap: onClick == null ? null : () => onClick(),
-        onLongPress: onLongClick == null ? null : () => onLongClick(),
-        onDoubleTap: onDoubleClick == null ? null : () => onDoubleClick(),
+        onTap: onClick,
+        onLongPress: onLongClick,
+        onDoubleTap: onDoubleClick,
         child: Container(
           width: width,
           height: height,
@@ -157,48 +190,66 @@ class DButton {
       ),
     );
   }
+}
 
-  /// return custom button which has elevation
-  static Widget elevation({
-    /// [mainColor] body color of button. Default: Colors.white
-    Color mainColor = Colors.white,
+/// return custom button which has elevation
+class DButtonElevation extends StatelessWidget {
+  /// [mainColor] body color of button. Default: Colors.white
+  Color mainColor;
 
-    /// [splashColor] color for splash effect. Default: Colors.grey
-    Color splashColor = Colors.grey,
+  /// [splashColor] color for splash effect. Default: Colors.grey
+  Color splashColor;
 
-    /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
-    Color disableColor = Colors.grey,
+  /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
+  Color disableColor;
 
-    /// [shadowColor] color for shadow button
-    Color? shadowColor,
+  /// [shadowColor] color for shadow button
+  Color? shadowColor;
 
-    /// [onClick] action when button clicked
-    Function? onClick,
+  /// [onClick] action when button clicked
+  Function()? onClick;
 
-    /// [onDoubleClick] action when button double clicked
-    Function? onDoubleClick,
+  /// [onDoubleClick] action when button double clicked
+  Function()? onDoubleClick;
 
-    /// [onLongClick] action when button long press
-    Function? onLongClick,
+  /// [onLongClick] action when button long press
+  Function()? onLongClick;
 
-    /// [width] width of button
-    double? width,
+  /// [width] width of button
+  double? width;
 
-    /// [height] height of button
-    double? height,
+  /// [height] height of button
+  double? height;
 
-    /// [elevation] elevation of button
-    double? elevation,
+  /// [elevation] elevation of button
+  double? elevation;
 
-    /// [padding] padding of button
-    EdgeInsetsGeometry? padding,
+  /// [padding] padding of button
+  EdgeInsetsGeometry? padding;
 
-    /// [child] child of button. Widget can be anything as can as possible
-    required Widget child,
+  /// [child] child of button. Widget can be anything as can as possible
+  Widget child;
 
-    /// [radius] radius for angle button. Default: 4.0
-    double radius = 4.0,
-  }) {
+  /// [radius] radius for angle button. Default: 4.0
+  double radius;
+  DButtonElevation({
+    required this.child,
+    this.disableColor = Colors.grey,
+    this.elevation,
+    this.height,
+    this.mainColor = Colors.white,
+    this.onClick,
+    this.onDoubleClick,
+    this.onLongClick,
+    this.padding,
+    this.radius = 4.0,
+    this.shadowColor,
+    this.splashColor = Colors.grey,
+    this.width,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Material(
       shadowColor: shadowColor,
       elevation: elevation ?? 4,
@@ -209,9 +260,9 @@ class DButton {
       child: InkWell(
         borderRadius: BorderRadius.circular(radius),
         splashColor: splashColor,
-        onTap: onClick == null ? null : () => onClick(),
-        onLongPress: onLongClick == null ? null : () => onLongClick(),
-        onDoubleTap: onDoubleClick == null ? null : () => onDoubleClick(),
+        onTap: onClick,
+        onLongPress: onLongClick,
+        onDoubleTap: onDoubleClick,
         child: Container(
           width: width,
           height: height,
@@ -233,42 +284,58 @@ class DButton {
       ),
     );
   }
+}
 
-  /// return custom button circle
-  static Widget circle({
-    /// [mainColor] body color of button. Default: Colors.white
-    Color mainColor = Colors.white,
+/// return custom button circle
+class DButtonCircle extends StatelessWidget {
+  /// [mainColor] body color of button. Default: Colors.white
+  Color mainColor;
 
-    /// [splashColor] color for splash effect. Default: Colors.grey
-    Color splashColor = Colors.grey,
+  /// [splashColor] color for splash effect. Default: Colors.grey
+  Color splashColor;
 
-    /// [shadowColor] color for shadow button
-    Color? shadowColor,
+  /// [shadowColor] color for shadow button
+  Color? shadowColor;
 
-    /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
-    Color disableColor = Colors.grey,
+  /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
+  Color disableColor;
 
-    /// [onClick] action when button clicked
-    Function? onClick,
+  /// [onClick] action when button clicked
+  Function()? onClick;
 
-    /// [onDoubleClick] action when button double clicked
-    Function? onDoubleClick,
+  /// [onDoubleClick] action when button double clicked
+  Function()? onDoubleClick;
 
-    /// [onLongClick] action when button long press
-    Function? onLongClick,
+  /// [onLongClick] action when button long press
+  Function()? onLongClick;
 
-    /// [diameter] diameter of circle button
-    double? diameter,
+  /// [diameter] diameter of circle button
+  double? diameter;
 
-    /// [padding] padding of button
-    EdgeInsetsGeometry? padding,
+  /// [padding] padding of button
+  EdgeInsetsGeometry? padding;
 
-    /// [child] child of button. Widget can be anything as can as possible
-    required Widget child,
+  /// [child] child of button. Widget can be anything as can as possible
+  Widget child;
 
-    /// [shadowOffset] Position of shadow button. Default: Offset.zero
-    Offset shadowOffset = Offset.zero,
-  }) {
+  /// [shadowOffset] Position of shadow button. Default: Offset.zero
+  Offset shadowOffset;
+  DButtonCircle({
+    required this.child,
+    this.diameter,
+    this.disableColor = Colors.grey,
+    this.mainColor = Colors.white,
+    this.onClick,
+    this.onDoubleClick,
+    this.onLongClick,
+    this.padding,
+    this.shadowColor,
+    this.shadowOffset = Offset.zero,
+    this.splashColor = Colors.grey,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -277,7 +344,7 @@ class DButton {
             : [
                 BoxShadow(
                   blurRadius: 5,
-                  color: shadowColor,
+                  color: shadowColor!,
                   offset: shadowOffset,
                 ),
               ],
@@ -290,9 +357,9 @@ class DButton {
         child: InkWell(
           borderRadius: BorderRadius.circular(diameter ?? 1000),
           splashColor: splashColor,
-          onTap: onClick == null ? null : () => onClick(),
-          onLongPress: onLongClick == null ? null : () => onLongClick(),
-          onDoubleTap: onDoubleClick == null ? null : () => onDoubleClick(),
+          onTap: onClick,
+          onLongPress: onLongClick,
+          onDoubleTap: onDoubleClick,
           child: padding == null
               ? Container(
                   width: diameter,
@@ -301,58 +368,77 @@ class DButton {
                   child: child,
                 )
               : Padding(
-                  padding: padding,
+                  padding: padding!,
                   child: child,
                 ),
         ),
       ),
     );
   }
+}
 
-  /// return custom button which has border
-  static Widget border({
-    /// [mainColor] body color of button. Default: Colors.white
-    Color mainColor = Colors.white,
+/// return custom button which has border
+class DButtonBorder extends StatelessWidget {
+  /// [mainColor] body color of button. Default: Colors.white
+  Color mainColor;
 
-    /// [borderColor] color of border
-    required Color borderColor,
+  /// [borderColor] color of border
+  Color borderColor;
 
-    /// [borderWidth] sized of border width. Default: 2.0
-    double borderWidth = 2.0,
+  /// [borderWidth] sized of border width. Default: 2.0
+  double borderWidth;
 
-    /// [splashColor] color for splash effect. Default: Colors.grey
-    Color splashColor = Colors.grey,
+  /// [splashColor] color for splash effect. Default: Colors.grey
+  Color splashColor;
 
-    /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
-    Color disableColor = Colors.grey,
+  /// [disableColor] color button if button disable / function onClick off. Default: Colors.grey
+  Color disableColor;
 
-    /// [onClick] action when button clicked
-    Function? onClick,
+  /// [onClick] action when button clicked
+  Function()? onClick;
 
-    /// [onDoubleClick] action when button double clicked
-    Function? onDoubleClick,
+  /// [onDoubleClick] action when button double clicked
+  Function()? onDoubleClick;
 
-    /// [onLongClick] action when button long press
-    Function? onLongClick,
+  /// [onLongClick] action when button long press
+  Function()? onLongClick;
 
-    /// [width] width of button
-    double? width,
+  /// [width] width of button
+  double? width;
 
-    /// [height] height of button
-    double? height,
+  /// [height] height of button
+  double? height;
 
-    /// [padding] padding of button
-    EdgeInsetsGeometry? padding,
+  /// [padding] padding of button
+  EdgeInsetsGeometry? padding;
 
-    /// [child] child of button. Widget can be anything as can as possible
-    required Widget child,
+  /// [child] child of button. Widget can be anything as can as possible
+  Widget child;
 
-    /// [radius] radius for angle button. Default: 4.0
-    double radius = 4.0,
+  /// [radius] radius for angle button. Default: 4.0
+  double radius;
 
-    /// [shadowOffset] Position of shadow button. Default: Offset.zero
-    Offset shadowOffset = Offset.zero,
-  }) {
+  /// [shadowOffset] Position of shadow button. Default: Offset.zero
+  Offset shadowOffset;
+  DButtonBorder({
+    required this.borderColor,
+    this.borderWidth = 2.0,
+    required this.child,
+    this.disableColor = Colors.grey,
+    this.height,
+    this.mainColor = Colors.white,
+    this.onClick,
+    this.onDoubleClick,
+    this.onLongClick,
+    this.padding,
+    this.radius = 4.0,
+    this.shadowOffset = Offset.zero,
+    this.splashColor = Colors.grey,
+    this.width,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(radius),
       color: onClick == null && onDoubleClick == null && onLongClick == null
@@ -361,9 +447,9 @@ class DButton {
       child: InkWell(
         borderRadius: BorderRadius.circular(radius),
         splashColor: splashColor,
-        onTap: onClick == null ? null : () => onClick(),
-        onLongPress: onLongClick == null ? null : () => onLongClick(),
-        onDoubleTap: onDoubleClick == null ? null : () => onDoubleClick(),
+        onTap: onClick,
+        onLongPress: onLongClick,
+        onDoubleTap: onDoubleClick,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(radius),

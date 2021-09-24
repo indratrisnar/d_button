@@ -1,6 +1,6 @@
 name: d_button
 description: Custom buttons which you can create and re-style as you wish. It can be used for one or more widgets.
-version: 0.0.2
+version: 0.0.10
 homepage: https://github.com/indratrisnar/d_button
 
 environment:
